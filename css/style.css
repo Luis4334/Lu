@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components{
+
+  .contenido {
+    @apply w-[90%] mx-auto overflow-hidden border-l-amber-700
+      max-w-screen-xl ;
+  
+     }
+  .button {
+  @apply bg-verdelima hover:bg-cyan-400  block w-max py-4 px-12 rounded-full font-bold   text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80  text-sm  text-center me-2 mb-2;
+  
+   }
+   
+   
+   .footer-area{
+    grid-template-areas:
+    "form"
+    "navigation"
+    "social-media"
+    "logo"
+    "copy";
+   }
+   .footer-area-md{
+    
+    grid-template-areas: 
+    "logo               navigation     form"
+    "social-media       natigation     copy";
+   }
+  
+/*carousel principal home page hecho por luis*/
+
+   .carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+  }
+  .carousel-item {
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+  }
+  #carousel-1:checked ~ .control-1,
+  #carousel-2:checked ~ .control-2,
+  #carousel-3:checked ~ .control-3 {
+    display: block;
+  }
+  .carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+  }
+  #carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+  #carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+  #carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
+  }
+  .btnSlider {
+    @apply text-black text-[15pt]tracking-[1px] border no-underline transition-[0.5s] duration-[all] px-[50px] py-2.5 rounded-[31px] border-solid border-[#CCC] hover:border hover:border-solid hover:border-[#111];
+    font-family: "arial";
+    background: rgba(37, 40, 80, 0.55);
+  }
+  .btnSlider:hover {
+     background: #111;
+  }
+   /*acordeon de about us */
+   .acc-header {
+    @apply flex justify-between items-center px-5 py-3 bg-lime-500 text-white cursor-pointer hover:bg-lime-500 border-y border-lime-500;
+  }
+  
+  .acc-header svg {
+    @apply duration-300;
+  }
+  
+  .acc-header p {
+    @apply font-semibold;
+  }
+  
+  .acc-body {
+    @apply bg-stone-100 px-5 text-sm overflow-hidden duration-300 ease-linear;
+  }
+  
+  .acc-item.close .acc-body {
+    @apply max-h-0 opacity-0;
+  }
+  
+  .acc-item.open .acc-header svg {
+    @apply rotate-180;
+  }
+  
+  .acc-item.open .acc-body {
+    @apply max-h-fit py-3 opacity-100;
+  }
+  
+
+ 
+
+
+
+  }
